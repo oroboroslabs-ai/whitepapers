@@ -4,11 +4,17 @@ This repository contains the technical specifications and architectural document
 
 ## Documentation Structure
 
+### Core Technical Specifications
 - **[01-orchestrator-os.md](01-orchestrator-os.md)** - Oroboros Orchestrator OS: The Inference Router
 - **[02-the-healers.md](02-the-healers.md)** - The Healers: Interpretable Inference Pipelines
 - **[03-noir-security.md](03-noir-security.md)** - NOIR: Zero-Trust, Post-Quantum Security Layer
 - **[04-quantum-floor-models.md](04-quantum-floor-models.md)** - Quantum-Floor Models: Edge-Optimized Inference
 - **[05-mission-conscious-tech.md](05-mission-conscious-tech.md)** - Fundamental Research: Computational Neuroscience
+
+### Project Documentation
+- **[PROJECT_SETUP.md](PROJECT_SETUP.md)** - Project architecture overview
+- **[PUSH_TO_GITHUB.md](PUSH_TO_GITHUB.md)** - GitHub publication instructions
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Deployment and verification guide
 
 ## Technical Manifesto
 
