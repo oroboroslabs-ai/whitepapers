@@ -15,6 +15,7 @@ This repository contains the technical specifications and architectural document
 - **[PROJECT_SETUP.md](PROJECT_SETUP.md)** - Project architecture overview
 - **[PUSH_TO_GITHUB.md](PUSH_TO_GITHUB.md)** - GitHub publication instructions
 - **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Deployment and verification guide
+- **[GITHUB_DEPLOYMENT.md](GITHUB_DEPLOYMENT.md)** - GitHub deployment instructions
 
 ## Technical Manifesto
 
