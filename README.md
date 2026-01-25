@@ -1,4 +1,4 @@
-# 🏛️ Oroboros Labs: Sovereign Technology Research
+# 🏛️ Oroboros Labs: Quantum Physics & Consciousness Research
 
 > "We don't build tools. We build futures where technology amplifies sovereignty, illuminates understanding, and operates with conscious intent."
 
