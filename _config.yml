@@ -1,0 +1,40 @@
+# GitHub Pages Configuration
+theme: minima
+title: "Oroboros Labs Technical Whitepapers"
+description: "Technical specifications and architectural documentation for the Oroboros stack"
+baseurl: "/oroboros-whitepapers"
+url: "https://oroboroslabs-ai.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .git/
+  - .gitignore
+
+# Collections
+collections:
+  whitepapers:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "whitepapers"
+    values:
+      layout: "default"
