@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resonance Pi Network</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #1a1a1a; color: white; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .card { background: #2a2a2a; padding: 20px; margin: 10px 0; border-radius: 8px; }
+        .status { color: #4CAF50; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Resonance Pi Network</h1>
+            <p>Distributed AI Mesh with 777 Hz Resonance</p>
+            <p><em>Crafted by Source Technology</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Network Status</h3>
+            <div id="status">Loading...</div>
+        </div>
+
+        <div class="card">
+            <h3>AI Processing</h3>
+            <textarea id="aiInput" placeholder="Enter text for AI analysis..." rows="4" style="width:100%";></textarea>
+            <button onclick="processAI()">Process with AI</button>
+            <div id="aiOutput" style="margin-top:10px;"></div>
+        </div>
+    </div>
+
+    <script>
+        async function updateStatus() {
+            try {
+                const response = await fetch('/api/status');
+                const data = await response.json();
+                document.getElementById('status').innerHTML = `
+                    Status: <span class="status">${data.status}</span><br>
+                    Node: ${data.node_id}<br>
+                    Resonance: ${data.resonance_frequency}Hz
+                `;
+            } catch (error) {
+                console.error('Status error:', error);
+            }
+        }
+
+        async function processAI() {
+            const input = document.getElementById('aiInput').value;
+            const output = document.getElementById('aiOutput');
+
+            if (!input.trim()) {
+                output.innerHTML = 'Please enter text';
+                return;
+            }
+
+            output.innerHTML = 'Processing...';
+
+            try {
+                const response = await fetch('/api/ai/process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ input })
+                });
+                const result = await response.json();
+                output.innerHTML = `<pre>${JSON.stringify(result, null, 2)}</pre>`;
+            } catch (error) {
+                output.innerHTML = 'Error processing AI';
+            }
+        }
+
+        updateStatus();
+        setInterval(updateStatus, 5000);
+    </script>
+</body>
+</html>
