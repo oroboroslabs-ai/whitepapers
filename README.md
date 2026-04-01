@@ -10,6 +10,8 @@ This repository contains the technical specifications and architectural document
 - **[03-noir-security.md](03-noir-security.md)** - NOIR: Zero-Trust, Post-Quantum Security Layer
 - **[04-quantum-floor-models.md](04-quantum-floor-models.md)** - Quantum-Floor Models: Edge-Optimized Inference
 - **[05-mission-conscious-tech.md](05-mission-conscious-tech.md)** - Fundamental Research: Computational Neuroscience
+- **[06-phi-harmonic-cancer.md](06-phi-harmonic-cancer.md)** - φ-Harmonic Cancer Hypothesis: Testable Framework for Cellular Resonance Restoration
+- **[07-12-12-12-architecture.md](07-12-12-12-architecture.md)** - The 12-12-12 Architecture: Quantum-Coherent Information Processing Framework
 
 ### Project Documentation
 - **[PROJECT_SETUP.md](PROJECT_SETUP.md)** - Project architecture overview
