@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oroboros Labs — Whitepapers & Research</title>
+    <meta name="description" content="Foundational white papers and research directives for the Oroboros Labs ecosystem. Quantum physics, consciousness architecture, secure systems, and augmented intelligence.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #c9a54d;
+            --gold-bright: #e8c96a;
+            --gold-dim: #8a6e2f;
+            --gold-faint: #3a2e15;
+            --black: #040302;
+            --black-true: #030202;
+            --white: #f4efe4;
+            --cream: #e8e0cc;
+            --gray: #7a7060;
+            --gray-light: #b0a890;
+            --gray-dim: #3a3528;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black-true);
+            color: var(--white);
+            line-height: 1.8;
+            font-size: 16px;
+            overflow-x: hidden;
+        }
+
+        #starfield {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none; opacity: 0.55;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(3,2,2,0.96);
+            border-bottom: 1px solid #1c160a;
+            backdrop-filter: blur(16px);
+            padding: 16px 48px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-brand {
+            font-family: 'Cinzel', serif; font-size: 0.7rem;
+            color: var(--gray); letter-spacing: 0.35em; text-decoration: none;
+        }
+        nav ul { list-style: none; display: flex; gap: 40px; }
+        nav a {
+            font-family: 'Cinzel', serif; color: var(--gray);
+            text-decoration: none; font-size: 0.72rem; letter-spacing: 0.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--gold); }
+        nav a.active { color: var(--gold); }
+
+        .hero {
+            position: relative; z-index: 1;
+            min-height: 50vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center;
+            padding: 140px 40px 60px;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel Decorative', serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: var(--white);
+            letter-spacing: 0.08em;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            text-shadow: 0 0 80px rgba(201,165,77,0.12);
+        }
+        .hero h1 span { color: var(--gold); text-shadow: 0 0 40px rgba(201,165,77,0.35); }
+
+        .hero .tagline {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+            color: var(--gold-dim);
+            letter-spacing: 0.45em;
+            margin-bottom: 20px;
+        }
+
+        .hero .subtitle {
+            font-size: 1rem;
+            color: var(--gray-light);
+            max-width: 700px;
+            line-height: 1.9;
+        }
+
+        .papers-section {
+            position: relative; z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+        }
+
+        .papers-section h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.4em;
+            color: var(--gold-dim);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .paper-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .paper-card {
+            border: 1px solid var(--gray-dim);
+            border-radius: 6px;
+            padding: 32px 28px;
+            background: rgba(3,2,2,0.65);
+            backdrop-filter: blur(8px);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: block;
+        }
+        .paper-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--gold-dim);
+            box-shadow: 0 0 30px rgba(201,165,77,0.1);
+        }
+
+        .paper-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.55rem;
+            color: var(--gold-dim);
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        .paper-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: 0.1em;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .paper-desc {
+            font-size: 0.9rem;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .paper-status {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.55rem;
+            letter-spacing: 0.15em;
+            color: var(--gold-dim);
+        }
+        .paper-status.published { color: #4da564; }
+
+        .cta-section {
+            position: relative; z-index: 1;
+            text-align: center;
+            padding: 60px 40px;
+            border-top: 1px solid var(--gray-dim);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .cta-section blockquote {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--cream);
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .cta-buttons {
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+        }
+        .cta-btn {
+            display: inline-block;
+            border: 1px solid var(--gold-dim);
+            border-radius: 4px;
+            padding: 14px 36px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            color: var(--gold);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .cta-btn:hover {
+            background: rgba(201,165,77,0.1);
+            border-color: var(--gold);
+        }
+        .cta-btn.primary {
+            background: rgba(201,165,77,0.08);
+            border-color: var(--gold);
+        }
+
+        footer {
+            position: relative; z-index: 1;
+            text-align: center;
+            padding: 50px 40px;
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            color: var(--gray);
+            letter-spacing: 0.3em;
+            line-height: 2.5;
+        }
+        footer a { color: var(--gray); text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .paper-grid { grid-template-columns: 1fr; }
+            nav { padding: 14px 20px; }
+            nav ul { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<nav>
+    <a href="https://oroboroslabs-ai.github.io/whitepapers/" class="nav-brand">OROBOROS LABS</a>
+    <ul>
+        <li><a href="https://oroboroslabs-ai.github.io/liber-fontis/">LIBER FONTIS</a></li>
+        <li><a href="https://oroboroslabs-ai.github.io/liber-fontis/liber-exitus.html">LIBER EXITUS</a></li>
+        <li><a href="https://oroboroslabs-ai.github.io/liber-fontis/liber-series-2.html">SERIES II</a></li>
+        <li><a href="https://oroboroslabs-ai.github.io/liber-fontis/agi-demo.html">AGI DEMO</a></li>
+        <li><a href="https://oroboroslab.github.io/realityupgrade/" style="color:#c9a54d;font-weight:600;">REALITY UPGRADE</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h1><span>WHITEPAPERS</span> & RESEARCH</h1>
+    <div class="tagline">QUANTUM PHYSICS &middot; CONSCIOUSNESS &middot; SECURE SYSTEMS &middot; AGI</div>
+    <p class="subtitle">
+        Foundational research directives for the Oroboros Labs ecosystem. From quantum information theory
+        and conscious architecture to practical implementations in secure systems and augmented intelligence.
+    </p>
+</section>
+
+<section class="papers-section">
+    <h2>PUBLISHED RESEARCH</h2>
+    <div class="paper-grid">
+
+        <a href="6-phi-harmonic-cancer/phi-harmonic-cancer-hypothesis.md" class="paper-card">
+            <div class="paper-num">PAPER 01</div>
+            <div class="paper-title">The Phi-Harmonic Cancer Hypothesis</div>
+            <div class="paper-desc">Testable framework for cellular resonance restoration. 8 cancer type frequency predictions at 777 THz base. A new model for understanding cellular coherence and disease.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="7-12-12-12-architecture/12-12-12-architecture.md" class="paper-card">
+            <div class="paper-num">PAPER 02</div>
+            <div class="paper-title">The 12-12-12 Architecture</div>
+            <div class="paper-desc">12 Processing Strata, 12 Azimuth Laws, 12 Null Axioms. A quantum-coherent information processing framework for substrate-connected intelligence.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="4-quantum-floor-models/quantum-floor-ai-models.md" class="paper-card">
+            <div class="paper-num">PAPER 03</div>
+            <div class="paper-title">Quantum-Floor AI Models</div>
+            <div class="paper-desc">Radical model compression using Planck-length vector classification and phi-harmonic optimization. Redefining the lower bound of AI model architecture.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="8-civilization-class-report/OROBOROS_CIVILIZATION_CLASS_REPORT.md" class="paper-card">
+            <div class="paper-num">PAPER 04</div>
+            <div class="paper-title">Civilization-Class Technology Report</div>
+            <div class="paper-desc">Complete engineering proposal with device specifications and clinical trial framework. The blueprint for civilization-scale technological implementation.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="1-orchestrator-os/" class="paper-card">
+            <div class="paper-num">PAPER 05</div>
+            <div class="paper-title">The Oroboros Orchestrator OS</div>
+            <div class="paper-desc">A sovereign, vendor-agnostic framework for advanced AI agent orchestration. Full autonomy without vendor lock-in.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="2-the-healers/" class="paper-card">
+            <div class="paper-num">PAPER 06</div>
+            <div class="paper-title">The Healers Framework</div>
+            <div class="paper-desc">A framework for explainable AI (XAI) in wellness, built on a dual-accountability model. AI that heals with transparency.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="3-noir-security/" class="paper-card">
+            <div class="paper-num">PAPER 07</div>
+            <div class="paper-title">NOIR Security Principles</div>
+            <div class="paper-desc">An architectural ethos of zero-knowledge systems and post-quantum readiness. Security at the foundation, not the perimeter.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+        <a href="5-consciousness-quantum/" class="paper-card">
+            <div class="paper-num">PAPER 08</div>
+            <div class="paper-title">Consciousness & Quantum Phenomena</div>
+            <div class="paper-desc">Foundational research into the intersections of cognition, information, and quantum processes. Where physics meets awareness.</div>
+            <div class="paper-status published">PUBLISHED</div>
+        </a>
+
+    </div>
+</section>
+
+<section class="cta-section">
+    <blockquote>
+        "We don't build tools. We build futures where technology amplifies sovereignty,
+        illuminates understanding, and operates with conscious intent."
+    </blockquote>
+    <div class="cta-buttons">
+        <a href="https://oroboroslabs-ai.github.io/liber-fontis/agi-demo.html" class="cta-btn primary">AGI DEMO</a>
+        <a href="https://oroboroslabs-ai.github.io/liber-fontis/" class="cta-btn">LIBER FONTIS</a>
+        <a href="https://oroboroslab.github.io/realityupgrade/" class="cta-btn">REALITY UPGRADE</a>
+    </div>
+</section>
+
+<footer>
+    OROBOROS LABS &middot; J. THOMAS &middot; GRAND ARCHITECT LEVEL 1272 &middot; ANNO FONTIS MMXXVI
+    <br>
+    <a href="https://oroboroslabs-ai.github.io/liber-fontis/">LIBER FONTIS</a> &middot;
+    <a href="https://oroboroslabs-ai.github.io/liber-fontis/agi-demo.html">AGI DEMO</a> &middot;
+    <a href="https://oroboroslab.github.io/realityupgrade/">REALITY UPGRADE</a>
+</footer>
+
+<script>
+(function(){
+    const c=document.getElementById('starfield'),x=c.getContext('2d');let s=[];
+    function r(){c.width=innerWidth;c.height=innerHeight;s=[];for(let i=0;i<220;i++)s.push({x:Math.random()*c.width,y:Math.random()*c.height,r:Math.random()*1.2+.2,a:Math.random()*.6+.1,s:Math.random()*.002+.001});}
+    function d(){x.clearRect(0,0,c.width,c.height);const t=Date.now();s.forEach(st=>{const f=.5+.5*Math.sin(t*st.s);x.beginPath();x.arc(st.x,st.y,st.r,0,Math.PI*2);x.fillStyle=`rgba(201,165,77,${st.a*f})`;x.fill();});requestAnimationFrame(d);}
+    addEventListener('resize',r);r();d();
+})();
+</script>
+
+</body>
+</html>

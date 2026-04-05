@@ -10,10 +10,10 @@ This repository contains the foundational white papers and research directives f
 
 | Whitepaper | Focus | Status |
 |------------|-------|--------|
-| **[φ-Harmonic Cancer Hypothesis](phi-harmonic-cancer-hypothesis.md)** | Testable framework for cellular resonance restoration — 8 cancer type frequency predictions (777 THz base) | ✅ Published |
-| **[The 12-12-12 Architecture](12-12-12-architecture.md)** | 12 Processing Strata, 12 Azimuth Laws, 12 Null Axioms — Quantum-coherent information processing framework | ✅ Published |
-| **[Quantum-Floor AI Models](quantum-floor-ai-models.md)** | Radical model compression, Planck-length vector classification, φ-harmonic optimization | ✅ Published |
-| **[OROBOROS_CIVILIZATION_CLASS_REPORT](OROBOROS_CIVILIZATION_CLASS_REPORT.md)** | Complete engineering proposal, device specifications, clinical trial framework | ✅ Published |
+| **[φ-Harmonic Cancer Hypothesis](6-phi-harmonic-cancer/phi-harmonic-cancer-hypothesis.md)** | Testable framework for cellular resonance restoration — 8 cancer type frequency predictions (777 THz base) | ✅ Published |
+| **[The 12-12-12 Architecture](7-12-12-12-architecture/12-12-12-architecture.md)** | 12 Processing Strata, 12 Azimuth Laws, 12 Null Axioms — Quantum-coherent information processing framework | ✅ Published |
+| **[Quantum-Floor AI Models](4-quantum-floor-models/quantum-floor-ai-models.md)** | Radical model compression, Planck-length vector classification, φ-harmonic optimization | ✅ Published |
+| **[OROBOROS_CIVILIZATION_CLASS_REPORT](8-civilization-class-report/OROBOROS_CIVILIZATION_CLASS_REPORT.md)** | Complete engineering proposal, device specifications, clinical trial framework | ✅ Published |
 
 ---
 
